@@ -1,0 +1,52 @@
+/******
+GasinaBox version 0.1.0: A simulation to visually illustrate the
+behavior of ideal gases and interacting gases.
+
+Copyright (c) 2025, Carl Bartels
+(University of Manitoba, Department of Chemistry)
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, see
+<https://www.gnu.org/licenses/>.
+ *****/
+
+/* Currently this is all inactive until I figure out how to make the
+fake simd work seamlessly. Why have optional compile if one option
+doesn't work?  Once both options work, this file will get renamed to
+build.rs and likely something like what is below will be used to
+detect options.*/
+
+//The following is added to detect if we are working with nightly or
+// stable build chain. I currently have a requirement of nightly in
+// order to use simd. This is the first step in making it possible to
+// build without nightly and have alternative methods compile in order
+// not to use simd.
+
+/*
+use std::env;
+ */
+
+fn main() {
+    /*
+    let rust_toolchain = env::var("RUSTUP_TOOLCHAIN").unwrap();
+    if rust_toolchain.starts_with("stable") {
+        //enable the 'stable' features flag
+        println!("cargo:rustc-cfg=feature=\"stable\"");
+    } else if rust_toolchain.starts_with("nightly") {
+        //enable the 'nightly' feature flag
+        println!("cargo:rustc-cfg=feature=\"nightly\"");
+    } else {
+        panic!("Unexpected value for rustc toolchain")
+    }
+     */
+}

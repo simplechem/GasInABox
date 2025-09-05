@@ -1,0 +1,50 @@
+#/******
+#GasinaBox version 0.1.0: A simulation to visually illustrate the
+#behavior of ideal gases and interacting gases.
+#
+#Copyright (c) 2025, Carl Bartels
+#(University of Manitoba, Department of Chemistry)
+#
+#This program is free software; you can redistribute it and/or
+#modify it under the terms of the GNU General Public License
+#as published by the Free Software Foundation; either version 2
+#of the License, or (at your option) any later version.
+#
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+#
+#You should have received a copy of the GNU General Public License
+#along with this program; if not, see
+#<https://www.gnu.org/licenses/>.
+# *****/
+
+[package]
+name = "gasinabox"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bevy = { version = "0.16" }
+rand = "0.8.5"
+crossbeam-channel = "0.5"
+clap = { version = "4.5.39", features = ["derive"] }
+
+[profile.dev]
+opt-level=1
+
+[profile.dev.package."*"]
+opt-level=3
+
+[profile.release]
+opt-level=3
+debug=false
+strip="symbols"
+lto=true
+codegen-units=1
+panic="abort"
+
+[features]
+stable = []
+nightly = []
